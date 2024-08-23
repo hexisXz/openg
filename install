@@ -4,12 +4,12 @@
 echo "sudo or doas (s/d)" && read i
 
 # if the user enters "d" run this command 
-if [ "$i" "d" ]; then 
+if [ "$i" = "d" ]; then 
 	cd ./openg && doas mv openg /usr/local/bin/ 
 fi
 
 # if the user enters "s" run this command
-if [ "$i" "s" ]; then
+if [ "$i" = "s" ]; then
 	cd ./openg && sudo mv openg /usr/local/bin/ 
 fi
 
