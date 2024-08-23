@@ -21,7 +21,7 @@ pip install pipx
 
 pipx install html2text 
 
-ftp https://raw.githubusercontent.com/hexisXz/openg/main/install && chmod +x install && sh install && rm install
+ftp https://raw.githubusercontent.com/hexisXz/openg/main/install && chmod +x install && sh install
 ```
 
 or:
@@ -33,5 +33,5 @@ pip install pipx
 
 pipx install html2text 
 
-curl "https://raw.githubusercontent.com/hexisXz/openg/main/install" > install && sh install && rm install
+curl "https://raw.githubusercontent.com/hexisXz/openg/main/install" > install && sh install
 ```
