@@ -27,5 +27,11 @@ ftp https://raw.githubusercontent.com/hexisXz/openg/main/install && chmod +x ins
 or:
 
 ```sh
+doas pkg_add py3-pip 
+
+pip install pipx
+
+pipx install html2text 
+
 curl "https://raw.githubusercontent.com/hexisXz/openg/main/install" > install && sh install && rm install
 ```
