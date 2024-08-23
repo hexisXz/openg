@@ -21,5 +21,5 @@ pip install pipx
 
 pipx install html2text 
 
-curl "https://raw.githubusercontent.com/hexisXz/openg/main/install" | sh
+curl "https://raw.githubusercontent.com/hexisXz/openg/main/install" >> openg-install && sh openg-install
 ```
