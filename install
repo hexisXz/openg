@@ -5,11 +5,11 @@ echo "sudo or doas (s/d)" && read i
 
 # if the user enters "d" run this command 
 if [ "$i" = "d" ]; then 
-	cd ./openg && doas mv openg /usr/local/bin/ 
+	git clone https://github.com/hexisXz/openg.git && cd ./openg && doas mv openg /usr/local/bin/ 
 fi
 
 # if the user enters "s" run this command
 if [ "$i" = "s" ]; then
-	cd ./openg && sudo mv openg /usr/local/bin/ 
+	git clone https://github.com/hexisXz/openg.git && cd ./openg && sudo mv openg /usr/local/bin/ 
 fi
 
