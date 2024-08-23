@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# colors
+RESET=$(printf '\033[0m')
+BOLD=$(printf '\033[1m')
+UNDERLINE=$(printf '\033[4m')
+BLACK=$(printf '\033[30m')
+RED=$(printf '\033[31m')
+GREEN=$(printf '\033[32m')
+YELLOW=$(printf '\033[33m')
+BLUE=$(printf '\033[34m')
+MAGENTA=$(printf '\033[35m')
+CYAN=$(printf '\033[36m')
+WHITE=$(printf '\033[37m')
+BG_BLACK=$(printf '\033[40m')
+BG_RED=$(printf '\033[41m')
+BG_GREEN=$(printf '\033[42m')
+BG_YELLOW=$(printf '\033[43m')
+BG_BLUE=$(printf '\033[44m')
+BG_MAGENTA=$(printf '\033[45m')
+BG_CYAN=$(printf '\033[46m')
+BG_WHITE=$(printf '\033[47m')
+
+# Check if a search query was provided
+if [ "$#" -lt 1 ]; then
+    printf "${YELLOW}Usage: %s <search_query>%s\n" "$0" "$YELLOW"
+    exit 1
+fi
+
+# Combine all arguments into a single search query
+search_query="$*"
+
+# Replace spaces with "+"
+formatted_query=$(echo "$search_query" | sed 's/ /+/g')
+
+# Make the Google search URL
+search_url="https://www.google.com/search?q=$formatted_query"
+
+# Print "searching for" to give the user some visual feedback
+printf "${GREEN}----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------${RESET}\n"
+printf "Searching for: %s\n" "$search_url"
+printf "${GREEN}----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------${RESET}\n"
+
+# And now search Google, remove all the bull, and bam! Done.
+printf "${BLUE}+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n"
+
+curl -s "$search_url" | html2text --decode-errors=ignore | grep -B 4 '\[Wikipedia\]' | awk '!seen[$0]++'
+curl -s "$search_url" | html2text --decode-errors=ignore | awk 'NR > 25' | grep -A 6 Wikipediaen.wikipedia.org | awk '!seen[$0]++'
+
+printf "${BLUE}+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n"
+

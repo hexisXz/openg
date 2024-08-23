@@ -1,2 +1,19 @@
 # openg
-this is a fork of my gsearch script ported to openBSD so you can quickly search google inside of the terminal in openBSD. (this might work on other UNIX-like operating systems too)
+search google inside the terminal in openBSD!
+
+
+# usage 
+type:
+```sh
+openg {whatever you want to search}
+```
+example:
+```sh
+openg openBSD
+```
+
+# how to install
+paste this in the terminal:
+```sh
+
+```
