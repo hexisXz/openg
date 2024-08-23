@@ -1,0 +1,12 @@
+#!/bin/sh 
+
+echo "are you sure you want to remove openg? (y/n)"
+
+read i 
+
+if [ "$i" = "y" ]; then 
+	doas rm /usr/local/bin/openg
+else
+	echo "package was not uninstalled."
+	exit 1
+fi
