@@ -5,11 +5,11 @@ search google inside the terminal in openBSD!
 # usage 
 type:
 ```sh
-openg {whatever you want to search}
+openg -s {whatever you want to search}
 ```
 example:
 ```sh
-openg openBSD
+openg -s openBSD
 ```
 
 # how to install
