@@ -1,6 +1,8 @@
 # openg
 search google inside the terminal in openBSD!
 
+![openbsd-puffy](https://github.com/user-attachments/assets/3851c1f6-98f5-404b-9de6-9e7a75b80a91)
+
 
 # usage 
 type:
